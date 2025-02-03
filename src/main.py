@@ -38,10 +38,7 @@ class UI:
 
                 self.tamago.hunger.Eat()
 
-                print("\nВы покормили ", self.name,
-                      "\nВес: ", self.tamago.hunger.weight,
-                      "\nОжирение: ", self.tamago.hunger.obestylv,
-                      "\nРадость: ", self.tamago.happy.happylv)
+
 
             elif self.move == "3":
 
@@ -56,6 +53,9 @@ class UI:
             elif self.move == "ext":
 
                 self.tamago.Dead()
+
+            elif self.move == "4":
+                self.tamago.hunger.Over()
 
             else:
 

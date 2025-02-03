@@ -15,9 +15,9 @@ class Tamago:
         self.name = name
         self.livest = 1
 
-        self.health = Health()
+        self.health = Health(self.name)
         self.happy = Happy()
-        self.hunger = Hunger(self.happy, self.health)
+        self.hunger = Hunger(self.happy, self.health, self.name)
 
         self.age = 0
         self.__maxAge = 100

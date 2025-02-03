@@ -5,7 +5,9 @@ import random
 
 class Health:
 
-    def __init__(self):
+    def __init__(self, name):
+
+        self.name = name
 
         self.healthlv = 100
         self.healthst = 1
@@ -32,22 +34,23 @@ class Health:
 
         self.pillsnum = input("\nВведите номер таблетки (1-2) \nВернуться назад: b  ")
 
-        if self.pillsnum == "b".lower():
-            pass
+        if self.pillsnum.lower() == "b":
+            return
 
         try:
             self.pillsnum = int(self.pillsnum)
+
             if self.pillsnum in range(1, 3):
 
                 self.healthlv += Pills.setPoints(self.pillsnum)
 
                 if self.healthlv > 100: self.healthlv = 100
 
-                print("\nВы выздоровели! "
+                print("\nВы вылечили", self.name, "!"
                       "\nУровень здоровья: ", self.healthlv)
                 self.healthst = 1
 
-        except:
+        except ValueError:
 
             print("Команда введена неверно")
             self.Regen()
