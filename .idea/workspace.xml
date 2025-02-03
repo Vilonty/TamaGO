@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3735fd8-5cca-4f09-a2df-c6f7fb927c30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/over/over.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/food.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/pills.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/pills.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainprocesses/tamago.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainprocesses/tamago.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/health.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/health.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/hunger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/hunger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +41,7 @@
     "Python.over.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "Merging main"
   }
 }]]></component>
   <component name="RecentsManager">
