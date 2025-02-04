@@ -6,10 +6,13 @@ class Happy:
 
         self.happylv = 50
         self.happymax = 100
+
+        #face пока не используется
         self.__face = 3
 
     def sad(self):
 
+        #Грусть
         while DeadMenager.alive():
             time.sleep(5)
             self.happylv -= 1
