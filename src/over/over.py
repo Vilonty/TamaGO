@@ -253,7 +253,7 @@ class Bibibi:
 
 
 
-bi = Bibibi("Ы", 10)
+bi = Bibibi("ыЫы", 10)
 
 print(str(bi))
 print(repr(bi))
