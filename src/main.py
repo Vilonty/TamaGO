@@ -1,11 +1,6 @@
 from mainprocesses.tamago import Tamago
 from mainprocesses.dead import DeadMenager
-
-'''
-ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
-Перегрузка операторов в over/over.py
-ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
-'''
+from src.log.logger_config import  logger
 
 
 
@@ -15,10 +10,11 @@ class UI:
 
     def __init__(self):
 
+        logger.info("запуск UI")
         #Получение имени и экземпляра класса тамагойчи
         self.name = input('введите имя: ')
         self.tamago = Tamago(self.name)
-
+        logger.info(f"Создан тамагочи с именем {self.name}")
         #Запуск функции дисплея
         self.Display()
 
@@ -29,20 +25,20 @@ class UI:
 
         #Старт жизни и запуск функционала игры
         self.tamago.Live()
+        logger.info("Запуск жизни")
         self.Game()
 
     def Game(self):
-
+        logger.info("Запуск игры")
         #Deadmenager это проверка смерти, пока тамагочи жив игра работает
         while DeadMenager.alive():
 
             #Основная консолька
             self.move = input("\nВведите действие: "
                               "\nУзнать информацию [1], "
-                              "\nПокормить [2], "
-                              "\nВылечить [3], "
+                              "\nИнвентарь [2], "
                               "\nЗакончить игру [ext] ").lower()
-
+            logger.info(f"Выбрано действие: {self.move}")
             #Действие 1
             if self.move == "1":
 
@@ -53,32 +49,21 @@ class UI:
                       " \nРадость: ", self.tamago.happy.happylv,
                       f" \nБолезнь: {'да' if self.tamago.health.healthst == 0 else 'нет'}")
 
-            #Действие 2
             elif self.move == "2":
-
-                self.tamago.hunger.Eat()
-
-            #Действие 3
-            elif self.move == "3":
-
-                if self.tamago.health.healthst == 1:
-
-                    print("\nЛечение не нужно")
-
-                else:
-
-                    self.tamago.health.Regen()
+                logger.info("запуск инвентаря")
+                self.tamago.inventory.show_inventory()
 
             #Выход из программы
             elif self.move == "ext":
-
+                logger.info("выход из игры")
                 self.tamago.Dead()
 
             #Минимальная обработка исключений в случае неправильно введёной команды
             else:
-
+                logger.info("была выбрана неправильная команда")
                 print("\nКоманда введена неверно")
 
 #Запуск программы если файл называется main
 if __name__ == '__main__':
+    logger.info("инициализация программы")
     UI()

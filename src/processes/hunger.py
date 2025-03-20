@@ -1,80 +1,65 @@
-from src.items.food import Food
 from src.mainprocesses.dead import DeadMenager
 import time
+from src.items.ediblefabric import EdibleFactory
+from src.log.logger_config import logger
 class Hunger:
-
     def __init__(self, happy, health, name):
-
         self.happy = happy
         self.health = health
         self.name = name
-
         self.weight = 100
         self.obestylv = 0
 
     def Hung(self):
-
-        #Процесс голодания
+        logger.info("запуск голодания")
         while DeadMenager.alive():
-
             time.sleep(2)
             self.weight -= 1
 
             if self.weight > 100:
-                #Получение информации о излишнем весе
                 self.obestylv -= 1
 
-    def Eat(self):
-
-        #Возможность кормить
-        self.foodtype = input('\nВведите номер нужной еды (1-3) \nВернуться: b ')
-
-        if self.foodtype.lower() == 'b':
-            # Если пользователь вводит b то функция выключается
-            return
-
-        #Моя жалкая высосанная из пальца сделать обработку исключений
+    def Eat(self, item_id):
+        logger.info("запуск приёма пищи")
+        """Применяет эффект еды по её id."""
         try:
-            #Если человек вводит числа от 1 до 3х включетльно, то выбирается номер нужной еды
-            self.foodtype = int(self.foodtype)
+            food_id = int(item_id)
 
-            if self.foodtype in range(1, 4):
+            # Создаем объект еды через фабрику
+            edible = EdibleFactory.create_edible('food')
 
-                #Так как класс food статичный, можем его как хотим использовать
-                self.weight += Food.setPoints(self.foodtype, 1)
+            # Получаем характеристики еды по её id
+            food_item = next((item for item in edible.getfoodlist() if item['id'] == food_id), None)
 
-                if self.weight > 100:
+            if food_item['col'] == 0:
+                print("Еда отсутствует")
+                return
 
-                    self.Obesty()
+            self.weight += food_item['points']
+            self.happy.happylv += food_item['points']
 
-                #Добавление счастья
-                self.happy.happylv += Food.setPoints(self.foodtype, 2)
+            if self.weight > 100:
+                self.Obesty()
 
-                #Вывод информации о команде
-                print("\nВы покормили ", self.name,
-                      "\nВес: ", self.weight,
-                      "\nОжирение: ", self.obestylv,
-                      "\nРадость: ", self.happy.happylv)
+            # Уменьшаем количество еды
+            food_item['col'] -= 1
+            logger.info(f"успешный приём пищи, текущие состояние еды: {self.weight} счастья: {self.happy.happylv}")
+            # Вывод информации
+            print(f"\nВы покормили {self.name}"
+                  f"\nВес: {self.weight}"
+                  f"\nОжирение: {self.obestylv}"
+                  f"\nРадость: {self.happy.happylv}")
 
-            else:
-                print('Неправильный номер еды')
-                self.Eat()
 
-        except:
-            #Если пользователь ввёл фигню какую-то то ничо не сработает
+
+        except ValueError:
             print('Неправильное значение')
             self.Eat()
 
-
-
     def Obesty(self):
-        #функция ожирения
         self.obestylv = self.weight - 100
 
     def DeadFood(self):
-
-        #В случае если голод закончится, запускается смерть
         while DeadMenager.alive():
             if self.weight == 0:
-
                 self.health.healthlv = 0

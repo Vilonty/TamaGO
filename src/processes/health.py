@@ -1,4 +1,5 @@
-from src.items.pills import Pills
+from src.items.ediblefabric import EdibleFactory
+from src.log.logger_config import  logger
 from src.mainprocesses.dead import DeadMenager
 import time
 import random
@@ -14,7 +15,7 @@ class Health:
         self.__dieseasch = 1
 
     def Diseas(self):
-
+        logger.info("запуск риска болезни")
 
         while DeadMenager.alive():
 
@@ -30,27 +31,34 @@ class Health:
                     time.sleep(10)
                     self.healthlv -= 1
 
-    def Regen(self):
-
-        self.pillsnum = input("\nВведите номер таблетки (1-2) \nВернуться назад: b  ")
-
-        if self.pillsnum.lower() == "b":
-            return
-
+    def Regen(self, item_id):
+        logger.info("запуск процесса регенерации")
         try:
-            self.pillsnum = int(self.pillsnum)
 
-            if self.pillsnum in range(1, 3):
+            pills_id = int(item_id)
+            edible = EdibleFactory.create_edible('pills')
 
-                self.healthlv += Pills.setPoints(self.pillsnum)
+            pills_item = next((item for item in edible.getpillslist() if item['id'] == pills_id), None)
 
-                if self.healthlv > 100: self.healthlv = 100
 
-                print("\nВы вылечили", self.name, "!"
-                      "\nУровень здоровья: ", self.healthlv)
-                self.healthst = 1
+            if pills_item['col'] == 0:
+                logger.info("ошибка регенирации: нет таблеток")
+                print("Таблеток нет")
+                return
+
+
+            self.healthlv += pills_item["points"]
+
+            if self.healthlv > 100: self.healthlv = 100
+
+            pills_item['col'] -= 1
+
+            logger.info(f"успешная регенирация, текущее количетсво хп: {pills_item['col']}, состояние здоровья: {self.healthlv}")
+            print("\nВы вылечили", self.name, "!"
+                  "\nУровень здоровья: ", self.healthlv)
+            self.healthst = 1
 
         except ValueError:
-
+            logger.info("неправльно введёная команда")
             print("Команда введена неверно")
             self.Regen()

@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3735fd8-5cca-4f09-a2df-c6f7fb927c30" name="Changes" comment="" />
+    <list default="true" id="e3735fd8-5cca-4f09-a2df-c6f7fb927c30" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/drugs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/drugs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/ediblefabric.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/ediblefabric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/pills.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/pills.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/logger_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/logger_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainprocesses/tamago.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainprocesses/tamago.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/over/Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/over/Error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/over/lyris.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/over/lyris.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/happy.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/happy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/health.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/health.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/hunger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/hunger.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,23 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.addition.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fullmain.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.over.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.addition.executor": "Run",
+    "Python.fullmain.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.over.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging main"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\проекты\мусор\TamagoMain\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.over">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="addition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TamagoMain" />
       <option name="ENV_FILES" value="" />
@@ -161,10 +177,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TamagoMain" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/over" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/over/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.over" />
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.over" />
         <item itemvalue="Python.addition" />
         <item itemvalue="Python.fullmain" />
       </list>
