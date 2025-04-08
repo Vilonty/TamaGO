@@ -7,6 +7,7 @@ from src.log.logger_config import logger
 from PyQt6.QtWidgets import QMessageBox
 
 
+
 class AppManager:
     def __init__(self):
         self.app = QApplication(sys.argv)

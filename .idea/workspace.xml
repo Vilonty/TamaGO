@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e3735fd8-5cca-4f09-a2df-c6f7fb927c30" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/style/main_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/main_style.qss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/InventoryWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/InventoryWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/utils/icon_menager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/utils/icon_menager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/log/tamagochi.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/tamagochi.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/hunger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/hunger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

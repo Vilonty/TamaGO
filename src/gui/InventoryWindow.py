@@ -16,12 +16,7 @@ class MainWindowInventory(QMainWindow):
         self.init_ui()
         self.load_style()
         IconManager.set_window_icon(self)
-        self.setup_update_timer()
 
-    def setup_update_timer(self):
-        self.update_timer = QTimer()
-        self.update_timer.timeout.connect(self.update_status_values)
-        self.update_timer.start(1000)  # Обновление каждую секунду
 
     def closeEvent(self, event):
         if hasattr(self, 'update_timer'):
