@@ -16,20 +16,17 @@ class Health:
 
     def Diseas(self):
         logger.info("запуск риска болезни")
-
         while DeadMenager.alive():
-
             time.sleep(10)
-            self.__ch = random.randint(self.__dieseasch,10)
-
-            if self.__ch > 7:
-
+            if DeadMenager.alive() and random.randint(1, 10) > 7:
                 self.healthst = 0
                 print("\nВы заболели")
-
-                while self.healthst == 0:
+                while DeadMenager.alive() and self.healthst == 0:
                     time.sleep(10)
                     self.healthlv -= 1
+                    if self.healthlv <= 0:
+                        DeadMenager.kill()
+                        break
 
     def Regen(self, item_id):
         logger.info("запуск процесса регенерации")

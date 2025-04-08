@@ -1,0 +1,116 @@
+#mainWidget {
+    background-image: url('images/main/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: none;
+}
+
+#leftPanel {
+    min-width: 200px;
+    max-width: 200px;
+    border-right: 1px solid #ccc;
+}
+
+#leftPanel QPushButton {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 50px;
+    max-height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+#leftPanel QPushButton:hover {
+    background-color: #e0e0e0;
+}
+
+
+QPushButton {
+    font-family: "Press Start 2P";
+    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid #000;
+    border-radius: 0;
+    padding: 5px;
+}
+
+
+#leftPanel QPushButton {
+    min-width: 200px;
+    min-height: 40px;
+    text-aling: center;
+    margin: 5px;
+}
+
+QMessageBox {
+    background-color: white;
+    font-family: "Press Start 2P";
+    font-size: 14px;
+}
+
+QMessageBox QLabel {
+    color: #000;
+    margin: 15px;
+}
+
+QMessageBox QPushButton {
+    min-width: 100px;
+    min-height: 30px;
+    font-size: 12px;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+#infoButton {
+    min-width: 300px;
+    min-height: 80px;
+    font-size: 30px;
+}
+
+
+
+
+QPushButton:hover {
+    background-color: rgba(230, 230, 230, 0.8);
+}
+
+
+QPushButton:pressed {
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+#centerPanel {
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+#tamaImage {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    padding: 10px;
+}
+
+#rightPanel {
+    min-width: 200px;
+    max-width: 200px;
+    border-left: 1px solid #ccc;
+}
+
+#infoButton {
+    min-width: 170px;
+    max-width: 170px;
+    min-height: 50px;
+    max-height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+#infoButton:hover {
+    background-color: #e0e0e0;
+}

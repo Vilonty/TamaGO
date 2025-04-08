@@ -1,0 +1,65 @@
+#itemsCatalogWidget {
+    background-color: #f5f5f5;
+}
+
+#catalogTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#categoryFrame {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#categoryLabel {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#itemCard {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+#itemCard:hover {
+    background-color: #d6eaf8;
+    border-color: #3498db;
+}
+
+#itemImage {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+#itemName {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#closeButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+#closeButton:hover {
+    background-color: #c0392b;
+}

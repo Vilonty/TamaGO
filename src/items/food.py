@@ -5,11 +5,11 @@ from src.log.logger_config import logger
 class Food(Edible):
     #Изменил с массива на словарь
     foodlist = [
-        {"id": 1, "name": "Картошка", "points": 5, "quantity": 2, "col": 2, "type": "food"},
-        {"id": 2, "name": "Морковка", "points": 6, "quantity": 3, "col": 2, "type": "food"},
-        {"id": 3, "name": "Пицца", "points": 8, "quantity": 4, "col": 2, "type": "food"},
-        {"id": 4, "name": "Печенье", "points": 10, "quantity": 5, "col": 2, "type": "food"},
-        {"id": 5, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food"},
+        {"id": 1, "name": "Картошка", "points": 5, "quantity": 2, "col": 2, "type": "food","img":"food.png"},
+        {"id": 2, "name": "Морковка", "points": 6, "quantity": 3, "col": 2, "type": "food","img":"food.png"},
+        {"id": 3, "name": "Пицца", "points": 8, "quantity": 4, "col": 2, "type": "food","img":"food.png"},
+        {"id": 4, "name": "Печенье", "points": 10, "quantity": 5, "col": 2, "type": "food","img":"food.png"},
+        {"id": 5, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food","img":"food.png"},
     ]
 
     #Статический метод добавления еды

@@ -4,8 +4,8 @@ from src.log.logger_config import logger
 class Drug(Edible):
     #Изменил с массива на словарь
     drugs = [
-        {"id": 9,"name": "Наркотик 1", "quantity": 20, "col": 2, "type": "drug"},
-        {"id": 10,"name": "Наркотик 2", "quantity": 30, "col": 2, "type": "drug"},
+        {"id": 9,"name": "Наркотик 1", "quantity": 20, "col": 2, "type": "drug","img":"food.png"},
+        {"id": 10,"name": "Наркотик 2", "quantity": 30, "col": 2, "type": "drug","img":"food.png"},
     ]
 
     #Статический метод добавления еды

@@ -5,18 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3735fd8-5cca-4f09-a2df-c6f7fb927c30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gui/InventoryWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/ItemsShow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/MainGame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/MainWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/Settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/assets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/assets/button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/assets/buttonFabric.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/style/game_style.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/style/inventory_style.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/style/items.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/style/main_style.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/style/settings.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/utils/icon_menager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/game/ch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/game/food.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/game/inv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/game/time.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/game/zdr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/icons/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/main/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/main/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tamagoface/main/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tamagoface/main/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tamagoface/main/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tamagoface/main/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tamagoface/main/5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/items/drugs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/drugs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/ediblefabric.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/ediblefabric.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/items/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/food.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/items/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/items/pills.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/pills.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log/logger_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/logger_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/tamagochi.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/tamagochi.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainprocesses/dead.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainprocesses/dead.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mainprocesses/tamago.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainprocesses/tamago.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/over/Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/over/Error.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/over/lyris.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/over/lyris.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/happy.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/happy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processes/health.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/health.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processes/hunger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/hunger.py" afterDir="false" />
     </list>
@@ -51,6 +75,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.InventoryWindow.executor": "Run",
+    "Python.MainGame.executor": "Run",
+    "Python.MainWindow.executor": "Run",
     "Python.addition.executor": "Run",
     "Python.fullmain.executor": "Run",
     "Python.main (1).executor": "Run",
@@ -58,16 +85,20 @@
     "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\проекты\мусор\TamagoMain\src" />
+      <recent name="D:\проекты\мусор\TamagoMain\src\images\icons" />
+      <recent name="D:\проекты\мусор\TamagoMain\src\gui\utils" />
+      <recent name="D:\проекты\мусор\TamagoMain\src\images" />
+      <recent name="D:\проекты\мусор\TamagoMain\src\images\tamagoface\game" />
+      <recent name="D:\проекты\мусор\TamagoMain\src\gui" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main (1)">
-    <configuration name="addition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryWindow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TamagoMain" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -76,11 +107,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/operatorOverloading" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/operatorOverloading/addition.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/gui/InventoryWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -89,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fullmain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="MainGame" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TamagoMain" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,11 +129,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/fullmain.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/gui/MainGame.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TamagoMain" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/gui/MainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,28 +208,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="over" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TamagoMain" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/over" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/over/over.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TamagoMain" />
       <option name="ENV_FILES" value="" />
@@ -202,10 +233,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.InventoryWindow" />
+        <item itemvalue="Python.MainWindow" />
+        <item itemvalue="Python.MainGame" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.over" />
-        <item itemvalue="Python.addition" />
-        <item itemvalue="Python.fullmain" />
       </list>
     </recent_temporary>
   </component>

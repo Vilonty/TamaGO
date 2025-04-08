@@ -63,6 +63,29 @@ class Inventory:
             logger.info("введение неправильного предмета")
             print("Введено неправильное значение")
 
+    def get_items_by_category(self, category):
+        """Получаем предметы по категории"""
+        if category == "ЕДА":
+            return self.items_food.getfoodlist()
+        elif category == "ТАБЛЕТКИ":
+            return self.items_pills.getpillslist()
+        elif category == "НАРКОТИКИ":
+            return self.items_drug.getdrugslist()
+        return []
+
+    def get_item_by_id(self, item_id):
+        """Получаем предмет по ID"""
+        full_items = (
+                self.items_food.getfoodlist() +
+                self.items_pills.getpillslist() +
+                self.items_drug.getdrugslist()
+        )
+
+        for item in full_items:
+            if item.get('id') == item_id:
+                return item
+        return None
+
 
 
     def use_items(self, item_id):

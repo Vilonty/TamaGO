@@ -1,69 +1,52 @@
-from mainprocesses.tamago import Tamago
-from mainprocesses.dead import DeadMenager
-from src.log.logger_config import  logger
+import sys
+import os
+from src.gui.MainGame import MainWindowGame
+from PyQt6.QtWidgets import QApplication
+from src.gui.MainWindow import MainWindow
+from src.log.logger_config import logger
+from PyQt6.QtWidgets import QMessageBox
 
 
-
-
-#Место откуда в консоль всё выводится
-class UI:
-
+class AppManager:
     def __init__(self):
+        self.app = QApplication(sys.argv)
+        self.main_window = MainWindow(self)
+        self.tamago = None
 
-        logger.info("запуск UI")
-        #Получение имени и экземпляра класса тамагойчи
-        self.name = input('введите имя: ')
-        self.tamago = Tamago(self.name)
-        logger.info(f"Создан тамагочи с именем {self.name}")
-        #Запуск функции дисплея
-        self.Display()
+    def run(self):
+        self.main_window.show()
+        sys.exit(self.app.exec())
 
-    def Display(self):
+    def create_tamago(self, name):
+        try:
+            if not name:
+                raise ValueError("Имя не может быть пустым")
 
-        #Вывод имени питомца
-        print('\nИмя питомца: ', self.name)
+            from mainprocesses.tamago import Tamago
+            self.tamago = Tamago(name)
+            self.show_game_window()
 
-        #Старт жизни и запуск функционала игры
-        self.tamago.Live()
-        logger.info("Запуск жизни")
-        self.Game()
+        except Exception as e:
+            QMessageBox.critical(
+                self.main_window,
+                "Ошибка",
+                f"Не удалось создать питомца: {str(e)}"
+            )
 
-    def Game(self):
-        logger.info("Запуск игры")
-        #Deadmenager это проверка смерти, пока тамагочи жив игра работает
-        while DeadMenager.alive():
+    def show_game_window(self):
+        try:
 
-            #Основная консолька
-            self.move = input("\nВведите действие: "
-                              "\nУзнать информацию [1], "
-                              "\nИнвентарь [2], "
-                              "\nЗакончить игру [ext] ").lower()
-            logger.info(f"Выбрано действие: {self.move}")
-            #Действие 1
-            if self.move == "1":
+            self.game_window = MainWindowGame(self.tamago)
+            self.tamago.Live()
+            self.main_window.hide()  # Скрываем вместо закрытия
+            self.game_window.show()
+        except Exception as e:
+            print(f"Error: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            self.main_window.show()
 
-                print("\nВозраст: ", self.tamago.age,
-                      " \nЗдоровье: ", self.tamago.health.healthlv,
-                      " \nВес: ", self.tamago.hunger.weight,
-                      " \nОжирение: ", self.tamago.hunger.obestylv,
-                      " \nРадость: ", self.tamago.happy.happylv,
-                      f" \nБолезнь: {'да' if self.tamago.health.healthst == 0 else 'нет'}")
-
-            elif self.move == "2":
-                logger.info("запуск инвентаря")
-                self.tamago.inventory.show_inventory()
-
-            #Выход из программы
-            elif self.move == "ext":
-                logger.info("выход из игры")
-                self.tamago.Dead()
-
-            #Минимальная обработка исключений в случае неправильно введёной команды
-            else:
-                logger.info("была выбрана неправильная команда")
-                print("\nКоманда введена неверно")
-
-#Запуск программы если файл называется main
 if __name__ == '__main__':
-    logger.info("инициализация программы")
-    UI()
+    logger.info("Запуск приложения")
+    manager = AppManager()
+    manager.run()

@@ -12,15 +12,18 @@ class Hunger:
 
     def Hung(self):
         logger.info("запуск голодания")
+        print("голодание")
         while DeadMenager.alive():
             time.sleep(2)
             self.weight -= 1
+            print("-1 вес")
 
             if self.weight > 100:
                 self.obestylv -= 1
 
     def Eat(self, item_id):
         logger.info("запуск приёма пищи")
+
         """Применяет эффект еды по её id."""
         try:
             food_id = int(item_id)
@@ -61,5 +64,7 @@ class Hunger:
 
     def DeadFood(self):
         while DeadMenager.alive():
-            if self.weight == 0:
+            if self.weight <= 0:  # Изменяем проверку
                 self.health.healthlv = 0
+                DeadMenager.kill()
+            time.sleep(1)

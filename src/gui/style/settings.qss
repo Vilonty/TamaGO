@@ -1,0 +1,82 @@
+#mainWidget {
+                background-image: url('images/main/bg.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border: none;
+            }
+
+            #settingsCenterFrame {
+                background-color: white;
+                border: 2px solid #bdc3c7;
+                border-radius: 10px;
+            }
+
+            #settingsTitle {
+                font-family: "Press Start 2P";
+                font-size: 24px;
+                color: #000;
+                margin-bottom: 30px;
+            }
+
+            #settingsButton {
+                font-family: "Press Start 2P";
+                font-size: 14px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border: 2px solid #000;
+                border-radius: 0;
+                padding: 5px;
+                min-width: 200px;
+                min-height: 40px;
+                text-align: center;
+            }
+
+            #settingsButton:hover {
+                background-color: rgba(230, 230, 230, 0.8);
+            }
+
+            #settingsButton:pressed {
+                background-color: rgba(200, 200, 200, 0.8);
+            }
+
+            #rightPanel {
+                min-width: 200px;
+                max-width: 200px;
+                border-left: 1px solid #ccc;
+            }
+
+            #infoButton, #aboutButton {
+                min-width: 170px;
+                max-width: 170px;
+                min-height: 50px;
+                max-height: 50px;
+                border: 1px solid #aaa;
+                border-radius: 5px;
+                background-color: #fff;
+                font-size: 14px;
+                font-family: "Press Start 2P";
+            }
+
+            #infoButton:hover, #aboutButton:hover {
+                background-color: #e0e0e0;
+            }
+
+            QMessageBox {
+                background-color: white;
+                font-family: "Press Start 2P";
+                font-size: 14px;
+            }
+
+            QMessageBox QLabel {
+                color: #000;
+                margin: 15px;
+            }
+
+            QMessageBox QPushButton {
+                min-width: 100px;
+                min-height: 30px;
+                font-size: 12px;
+                background-color: #fff;
+                border: 2px solid #000;
+                font-family: "Press Start 2P";
+            }
