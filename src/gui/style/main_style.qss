@@ -17,6 +17,7 @@
     max-width: 200px;
     min-height: 50px;
     max-height: 50px;
+    font-family: "Press Start 2P";
     border: 1px solid #aaa;
     border-radius: 5px;
     background-color: #fff;

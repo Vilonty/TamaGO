@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFontDatabase
 from src.gui.utils.icon_menager import IconManager
+from src.log.logger_config import logger
 import os
 import platform
 import subprocess
@@ -95,6 +96,7 @@ class Settings(QMainWindow):
         main_layout.addWidget(right_panel, stretch=0)
 
     def open_images_folder(self):
+        logger.info("открыта папка измненеия фона")
         """Открывает папку images/main в проводнике системы"""
         base_dir = os.path.dirname(os.path.abspath(__file__))
         images_path = os.path.join(base_dir, "..", "images", "main")
@@ -131,7 +133,7 @@ class Settings(QMainWindow):
         msg.exec()
 
     def go_back(self):
-
+        logger.info("настройки закрыты")
         self.close()
 
     def load_styles(self):

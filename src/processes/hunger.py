@@ -12,11 +12,10 @@ class Hunger:
 
     def Hung(self):
         logger.info("запуск голодания")
-        print("голодание")
         while DeadMenager.alive():
             time.sleep(2)
             self.weight -= 1
-            print("-1 вес")
+
 
             if self.weight > 100:
                 self.obestylv -= 1

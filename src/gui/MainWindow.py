@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+from src.log.logger_config import logger
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QLabel, QFrame, QPushButton, QInputDialog)
 from PyQt6.QtCore import Qt, QTimer
@@ -13,7 +14,10 @@ from PyQt6.QtWidgets import QMessageBox
 
 class MainWindow(QMainWindow):
     def __init__(self, app_manager):
+
         super().__init__()
+        logger.info("запуск графического интерфейса")
+        QFontDatabase.addApplicationFont("fonts/PressStart2P-Regular.ttf")
         self.app_manager = app_manager
         self.current_image = 1
         self.init_ui()
@@ -66,12 +70,14 @@ class MainWindow(QMainWindow):
         main_layout.addWidget(left_panel, stretch=0)
 
     def show_about(self):
+        logger.info("нажата кнопка о авторе")
         msg = QMessageBox()
         msg.setWindowTitle("Об авторе")
         msg.setText("Vilonty")
         msg.exec()
 
     def show_info(self):
+        logger.info("нажата кнопка информация")
         text = (
             "Игра Тамагочи\n\n"
             "Чтобы начать игру нажмите 'Начать игру' и введите имя питомца.\n"
@@ -128,6 +134,7 @@ class MainWindow(QMainWindow):
 
 
     def show_logs(self):
+        logger.info("открыты логи")
         base_dir = os.path.dirname(os.path.abspath(__file__))
         # Исправленный путь: поднимаемся на 1 уровень вверх из папки gui
         log_path = os.path.join(base_dir, "..", "log", "tamagochi.log")
@@ -144,12 +151,15 @@ class MainWindow(QMainWindow):
                 else:
                     subprocess.run(['xdg-open', log_path])
             else:
+                logger.info("логи не найдены")
                 QMessageBox.warning(
+
                     self,
                     "Логи не найдены",
                     "Файл логов ещё не создан. Совершите первые действия в игре."
                 )
         except Exception as e:
+            logger.info("не удалось открыть файл логов")
             QMessageBox.critical(
                 self,
                 "Ошибка",
@@ -175,6 +185,7 @@ class MainWindow(QMainWindow):
         self.current_image = 1 if self.current_image >= 5 else self.current_image + 1
 
     def load_styles(self):
+        logger.info("стили загрузились")
         base_dir = os.path.dirname(os.path.abspath(__file__))
         style_path = os.path.join(base_dir, "..", "gui", "style", "main_style.qss")
 
@@ -195,11 +206,13 @@ class MainWindow(QMainWindow):
             self.app_manager.create_tamago(name)
 
     def items_show(self):
+        logger.info("запущен показ еды")
         from src.gui.ItemsShow import ItemsShow  # Импорт в методе, чтобы избежать циклических зависимостей
         self.items_window = ItemsShow(self)
         self.items_window.show()
 
     def settings(self):
+        logger.info("открыты настройки")
         from src.gui.Settings import Settings
         self.items_window_setting = Settings(self)
         self.items_window_setting.show()

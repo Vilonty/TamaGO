@@ -1,18 +1,21 @@
 import logging
 import os
 
-def setup_logger():
 
+def setup_logger():
     log_file = os.path.join('log', 'tamagochi.log')
 
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s\n',
-        filename=log_file,
-        filemode='a',
-        encoding='utf-8'
-    )
+    # Убедитесь, что папка существует
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
 
-    return logging.getLogger(__name__)
+    # Явно укажите обработчик с UTF-8
+    file_handler = logging.FileHandler(log_file, mode='a', encoding='utf-8')
+    file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    logger.addHandler(file_handler)
+
+    return logger
 
 logger = setup_logger()
