@@ -86,34 +86,56 @@ class Inventory:
                 return item
         return None
 
-
-
     def use_items(self, item_id):
-
         logger.info(f"выбор предмета с id: {item_id}")
 
-        full_items = (
-            self.items_food.getfoodlist() +
-            self.items_pills.getpillslist() +
-            self.items_drug.getdrugslist()
-        )
+        # Находим предмет во всех категориях
+        item = None
+        category = None
 
-        for item in full_items:
-            if item.get('id') == item_id and item['col'] != 0:
-                if item['type'] == 'food':
-                    self.hunger.Eat(item['id'])
+        # Ищем предмет в соответствующих категориях
+        if 1 <= item_id <= 99:
+            category = self.items_food.getfoodlist()
+        elif 100 <= item_id <= 199:
+            category = self.items_pills.getpillslist()
+        elif 200 <= item_id <= 299:
+            category = self.items_drug.getdrugslist()
 
-                elif item['type'] == 'pills':
-                    if self.health.healthst == 1:
-                        print('Питомец здоров')
-                    else:
-                        self.health.Regen(item['id'])
+        if category:
+            for it in category:
+                if it['id'] == item_id:
+                    item = it
+                    break
 
-                elif item['type'] == 'drug':
-                    self.happy.overjoy(item['id'])
+        # Проверяем наличие предмета
+        if not item or item['col'] <= 0:
+            print("Предмет не найден или закончился")
+            return False
 
-                return
+        try:
+            # Используем предмет и уменьшаем количество
+            success = False
+            if item['type'] == 'food':
+                success = self.hunger.Eat(item['id'])
+            elif item['type'] == 'pills':
+                if self.health.healthst == 1:
+                    print('Питомец здоров')
+                    success = False
+                else:
+                    success = self.health.Regen(item['id'])
+            elif item['type'] == 'drug':
+                success = self.happy.overjoy(item['id'])
 
-        print("Предмет с таким id не найден или закончился.")
+            # Если использование успешно - уменьшаем количество
+            if success:
+                item['col'] -= 1
+                print(f"Использован {item['name']}. Осталось: {item['col']}")
+                return True
 
+
+            return True
+
+        except Exception as e:
+            print(f"Ошибка при использовании: {str(e)}")
+            return False
 

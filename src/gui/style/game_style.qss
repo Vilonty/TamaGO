@@ -16,10 +16,11 @@
     border: 2px solid;
     border-radius: 8px;
 }
+
 #tamagoName {
     font-family: 'Press Start 2P';
     font-size: 20px;
-    color: #333;
+    color: black;
     background-color: rgba(255, 255, 255, 0.8);
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -27,7 +28,7 @@
 
 #timerLabel {
     font-size: 24px;
-    color: #2c3e50;
+    color: black;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -37,9 +38,12 @@
 
 #statusValue {
     font-size: 16px;
-    color: #2c3e50;
+    color: black;
     font-weight: bold;
-    margin: 5px 0;
+    margin: 3px 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    padding: 1px 6px;
 }
 
 #questionBtn {
@@ -51,22 +55,29 @@
     width: 80px;
 }
 
-#statusValue {
-    font-size: 16px;
-    color: #2c3e50;  /* Цвет текста */
-    font-weight: bold;
-    margin: 5px 0;
-    background-color: rgba(255, 255, 255, 150);  /* Белый с прозрачностью (~60%) */
-    border-radius: 5px;  /* Закругленные углы */
-    padding: 2px 8px;  /* Отступы внутри */
-}
 #inventoryBtn {
     background-color: transparent;
     border: none;
     margin-top: 20px;
+    color: black;
 }
 
 #tamaContainer {
     background-color: white;
     border-radius: 10px;
+}
+
+
+QLabel, QPushButton, QLineEdit, QTextEdit, QPlainTextEdit {
+    color: black;
+}
+
+
+QFrame {
+    color: black;
+}
+
+
+[transparent="true"] {
+    color: black;
 }

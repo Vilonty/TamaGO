@@ -7,9 +7,15 @@
     <list default="true" id="e3735fd8-5cca-4f09-a2df-c6f7fb927c30" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/InventoryWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/InventoryWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/utils/icon_menager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/utils/icon_menager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MainGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainGame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/style/game_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/game_style.qss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/style/inventory_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/inventory_style.qss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/style/main_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/main_style.qss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/drugs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/drugs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/pills.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/pills.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/log/tamagochi.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/tamagochi.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.InventoryWindow.executor": "Run",
-    "Python.MainGame.executor": "Run",
-    "Python.MainWindow.executor": "Run",
-    "Python.addition.executor": "Run",
-    "Python.fullmain.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.over.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.InventoryWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MainGame.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MainWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.addition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fullmain.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.over.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\проекты\мусор\TamagoMain\src\images\icons" />

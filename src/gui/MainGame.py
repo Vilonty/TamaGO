@@ -79,7 +79,7 @@ class MainWindowGame(QMainWindow):
 
         # Изображение тамагочи с белым фоном
         self.tama_container = QFrame()
-        self.tama_container.setFixedSize(320, 320)
+        self.tama_container.setMinimumSize(200, 200)
         self.tama_container.setStyleSheet("background-color: white;")
         tama_layout = QVBoxLayout(self.tama_container)
         tama_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -192,7 +192,7 @@ class MainWindowGame(QMainWindow):
 
             # Картинка статуса
             icon = QLabel()
-            icon.setFixedSize(70, 70)
+            icon.setMinimumSize(70, 70)
             self.load_status_icon(icon, image)
             vbox.addWidget(icon, alignment=Qt.AlignmentFlag.AlignCenter)
 

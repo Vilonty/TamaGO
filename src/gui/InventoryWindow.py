@@ -44,12 +44,6 @@ class MainWindowInventory(QMainWindow):
         content_layout.setContentsMargins(20, 20, 20, 20)
         content_layout.setSpacing(20)
 
-        self.time_bar = QFrame()
-        self.time_bar.setFixedHeight(30)
-        self.time_bar.setObjectName("timeBar")
-        self.time_progress = QFrame(self.time_bar)
-        self.time_progress.setObjectName("timeProgress")
-        main_layout.addWidget(self.time_bar)
 
         # Левая панель (3 предмета)
         left_panel = self.create_left_panel()
@@ -258,11 +252,12 @@ class MainWindowInventory(QMainWindow):
     def create_item_card(self, category, item):
         card = QFrame()
         card.setObjectName("itemCard")
-        card.setFixedSize(150, 200)
+        card.setMinimumSize(100, 140)
+        card.setMaximumSize(150, 200)
         card.setCursor(Qt.CursorShape.PointingHandCursor)
 
         layout = QVBoxLayout(card)
-        layout.setContentsMargins(5, 5, 5, 5)  # Уменьшаем отступы
+        layout.setContentsMargins(2, 2, 2, 2)  # Уменьшаем отступы
         layout.setSpacing(5)
         layout.setAlignment(Qt.AlignmentFlag.AlignCenter)  # Центрируем содержимое
 
@@ -271,8 +266,6 @@ class MainWindowInventory(QMainWindow):
         img.setObjectName("itemImage")  # Устанавливаем objectName для стилизации
         img.setFixedSize(75, 66)
         img.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        # Загружаем изображение
         self.load_item_image(img, item)
         layout.addWidget(img, alignment=Qt.AlignmentFlag.AlignCenter)  # Явное центрирование
 
@@ -342,27 +335,22 @@ class MainWindowInventory(QMainWindow):
 
     def get_item_id(self, category, item_name):
         """Сопоставляем имя предмета с его ID"""
-        # Здесь нужно реализовать логику сопоставления имен предметов с их ID
-        # Это может быть словарь или другая структура данных
-        item_mapping = {
-            "ЕДА": {
-                "Яблоко": 1,
-                "Бургер": 2,
-                "Салат": 3,
-                "Пицца": 4
-            },
-            "ТАБЛЕТКИ": {
-                "Аспирин": 1,
-                "Витамины": 2,
-                "Антибиотик": 3
-            },
-            "НАРКОТИКИ": {
-                "Кофе": 1,
-                "Энергетик": 2,
-                "Никотин": 3
-            }
-        }
-        return item_mapping.get(category, {}).get(item_name, 0)
+        # Получаем список предметов для категории
+        if category == "ЕДА":
+            items = self.tamago.inventory.items_food.getfoodlist()
+        elif category == "ТАБЛЕТКИ":
+            items = self.tamago.inventory.items_pills.getpillslist()
+        elif category == "НАРКОТИКИ":
+            items = self.tamago.inventory.items_drug.getdrugslist()
+        else:
+            return 0
+
+        # Ищем предмет по имени
+        for item in items:
+            if item['name'] == item_name:
+                return item['id']
+
+        return 0
 
     def format_item_info(self, item_info):
         """Форматируем информацию о предмете для отображения"""
@@ -386,40 +374,58 @@ class MainWindowInventory(QMainWindow):
     def on_item_click(self, category, item):
         """Обработчик клика по предмету"""
         if not self.tamago or not hasattr(self.tamago, 'inventory'):
-            QMessageBox.warning(self, "Ошибка", "Невозможно использовать предмет")
+            QMessageBox.warning(self, "Ошибка", "Инвентарь недоступен")
             return
 
         try:
-            # Используем предмет по его ID
-            self.tamago.inventory.use_items(item['id'])
-            QMessageBox.information(self, "Успех", f"Вы использовали {item['name']}")
+            # Проверяем, есть ли предмет в инвентаре
+            if item['col'] <= 0:
+                QMessageBox.warning(self, "Ошибка", "Этот предмет закончился")
+                return
 
-            # Обновляем отображение инвентаря
-            self.update_inventory_display()
+            # Используем предмет по его ID
+            success = self.tamago.inventory.use_items(item['id'])
+
+            if success:
+                QMessageBox.information(self, "Успех", f"Вы использовали {item['name']}")
+
+                self.update_inventory_display()
+                self.update_status_values()
+            else:
+                QMessageBox.warning(self, "Ошибка", "Не удалось использовать предмет. Проверьте логику использования.")
         except Exception as e:
-            QMessageBox.critical(self, "Ошибка", f"Не удалось использовать предмет: {str(e)}")
+            QMessageBox.critical(self, "Ошибка", f"Произошла ошибка: {str(e)}")
+            print(f"Ошибка при использовании предмета: {str(e)}")
 
     def update_inventory_display(self):
         """Обновляем отображение инвентаря"""
-        # Получаем content_widget (второй элемент в main_layout)
-        content_widget = self.centralWidget().layout().itemAt(1).widget()
-        content_layout = content_widget.layout()
+        main_layout = self.centralWidget().layout()
 
-        # Ищем inventory_panel среди дочерних виджетов content_layout
-        for i in range(content_layout.count()):
-            widget = content_layout.itemAt(i).widget()
-            if widget and hasattr(widget, 'objectName') and widget.objectName() == "inventoryPanel":
-                print("Удаляем старую панель инвентаря")
-                # Удаляем старую панель
-                widget.deleteLater()
+        # Находим индекс панели инвентаря
+        inventory_index = -1
+        for i in range(main_layout.count()):
+            widget = main_layout.itemAt(i).widget()
+            if widget and widget.objectName() == "inventoryPanel":
+                inventory_index = i
                 break
 
-        # Создаем новую панель
-        new_inventory_panel = self.create_inventory_panel()
-        new_inventory_panel.setObjectName("inventoryPanel")
+        if inventory_index == -1:
+            return
 
-        # Добавляем новую панель на то же место (индекс 1 в content_layout)
-        content_layout.insertWidget(1, new_inventory_panel)
+        # Удаляем старую панель
+        old_item = main_layout.takeAt(inventory_index)
+        if old_item.widget():
+            old_item.widget().deleteLater()
+
+        # Создаем и вставляем новую панель
+        new_panel = self.create_inventory_panel()
+        new_panel.setObjectName("inventoryPanel")
+        main_layout.insertWidget(inventory_index, new_panel)
+
+        # Принудительное обновление интерфейса
+        self.centralWidget().updateGeometry()
+        new_panel.adjustSize()
+        QApplication.processEvents()
 
     def create_right_panel(self):
         panel = QFrame()

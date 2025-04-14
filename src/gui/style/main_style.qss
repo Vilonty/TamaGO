@@ -7,8 +7,8 @@
 }
 
 #leftPanel {
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 210px;
+    max-width: 220px;
     border-right: 1px solid #ccc;
 }
 
@@ -22,12 +22,12 @@
     border-radius: 5px;
     background-color: #fff;
     font-size: 14px;
+    color: black;
 }
 
 #leftPanel QPushButton:hover {
     background-color: #e0e0e0;
 }
-
 
 QPushButton {
     font-family: "Press Start 2P";
@@ -36,14 +36,15 @@ QPushButton {
     border: 3px solid #000;
     border-radius: 0;
     padding: 5px;
+    color: black;
 }
-
 
 #leftPanel QPushButton {
     min-width: 200px;
     min-height: 40px;
-    text-aling: center;
+    text-align: center;
     margin: 5px;
+    color: black;
 }
 
 QMessageBox {
@@ -53,7 +54,7 @@ QMessageBox {
 }
 
 QMessageBox QLabel {
-    color: #000;
+    color: black;
     margin: 15px;
 }
 
@@ -63,21 +64,19 @@ QMessageBox QPushButton {
     font-size: 12px;
     background-color: #fff;
     border: 2px solid #000;
+    color: black;
 }
 
 #infoButton {
     min-width: 300px;
     min-height: 80px;
     font-size: 30px;
+    color: black;
 }
-
-
-
 
 QPushButton:hover {
     background-color: rgba(230, 230, 230, 0.8);
 }
-
 
 QPushButton:pressed {
     background-color: rgba(200, 200, 200, 0.8);
@@ -87,7 +86,6 @@ QPushButton:pressed {
     border-radius: 10px;
     margin: 20px;
 }
-
 
 #tamaImage {
     background-color: white;
@@ -110,8 +108,17 @@ QPushButton:pressed {
     border-radius: 5px;
     background-color: #fff;
     font-size: 14px;
+    color: black;
 }
 
 #infoButton:hover {
     background-color: #e0e0e0;
+}
+
+QLabel, QLineEdit, QTextEdit, QPlainTextEdit {
+    color: black;
+}
+
+QFrame {
+    color: black;
 }

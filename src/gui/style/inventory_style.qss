@@ -6,38 +6,35 @@
     border: none;
 }
 
-
-#itemCard QLabel[objectName="itemImage"] {
-    background-color: white;
-    border: 1px solid #ddd;
-    min-width: 75px;
-    min-height: 66px;
-    max-width: 75px;
-    max-height: 66px;
-    margin: 0 auto;
-    qproperty-alignment: 'AlignCenter';
-}
-
-
-#itemText {
-    text-align: center;
-    font-size: 12px;
-    color: #495057;
-    margin-top: 2px;
-}
-
-
 #itemCard {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 5px;
-    padding: 10px;
-    text-align: center;
+    padding: 8px;
+    min-width: 60px;
+    max-width: 120px;
+    min-height: 90px;
+    max-height: 120px;
 }
 
 #itemCard:hover {
     background-color: #e9ecef;
     border-color: #adb5bd;
+}
+
+#itemText {
+    text-align: center;
+    font-size: 10px;
+    color: black;
+    margin-top: 5px;
+    word-wrap: break-word;
+}
+
+#itemCard QLabel[objectName="itemImage"] {
+    min-width: 50px;
+    min-height: 40px;
+    max-width: 60px;
+    max-height: 50px;
 }
 
 #backBtn {
@@ -46,72 +43,33 @@
     border: none;
     border-radius: 5px;
     font-weight: bold;
-}
-
-#titleFrame {
-    background-color: white;
-    border-radius: 5px;
-    margin: 0 10px;
-}
-
-#inventoryTitle {
-    font-weight: bold;
-    font-size: 24px;
-    color: white;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
-}
-#inventoryButton {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px 15px;
-    min-width: 120px;
-}
-
-#inventoryButton:hover {
-    background-color: #2980b9;
-}
-
-#inventoryButton:pressed {
-    background-color: #1a5276;
-}
-#backBtn:hover {
-    background-color: #2980b9;
-}
-#topLine {
-    background-color: #3498db;
-    border: none;
-}
-
-#leftPanel {
-    min-width: 120px;
-    max-width: 120px;
-}
-
-#itemCaption {
-    font-weight: bold;
-    color: #2c3e50;
-    font-size: 14px;
+    padding: 8px;
 }
 
 #inventoryPanel {
     background-color: white;
     border: 1px solid #bdc3c7;
     border-radius: 5px;
-    min-width: 600px;
+    min-width: 500px;
 }
 
 #inventoryTitle {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     color: black;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ecf0f1;
+    padding: 3px 0;
+}
+
+#categoryLabel {
+    font-weight: bold;
+    font-size: 14px;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+#leftPanel {
+    min-width: 120px;
+    max-width: 120px;
 }
 
 #rightPanel {
@@ -131,28 +89,12 @@
     background-color: #ecf0f1;
 }
 
-#categoryLabel {
+#statusValue {
+    font-size: 14px;
+    color: black;
     font-weight: bold;
-    font-size: 16px;
-    color: #3498db;
-    margin-bottom: 5px;
-}
-
-
-#itemCard {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
-    padding: 5px;
-}
-
-#itemCard:hover {
-    background-color: #e9ecef;
-    border-color: #adb5bd;
-}
-
-#itemText {
-    font-size: 12px;
-    color: #495057;
-    margin-top: 2px;
+    padding: 2px 8px;
 }

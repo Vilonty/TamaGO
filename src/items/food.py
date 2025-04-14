@@ -6,10 +6,16 @@ class Food(Edible):
     #Изменил с массива на словарь
     foodlist = [
         {"id": 1, "name": "Картошка", "points": 5, "quantity": 2, "col": 2, "type": "food","img":"food.png"},
-        {"id": 2, "name": "Морковка", "points": 6, "quantity": 3, "col": 2, "type": "food","img":"food.png"},
+        {"id": 2, "name": "Морковка", "points": 6, "quantity": 3, "col": 2, "type": "food","img":"pizza.png"},
         {"id": 3, "name": "Пицца", "points": 8, "quantity": 4, "col": 2, "type": "food","img":"food.png"},
-        {"id": 4, "name": "Печенье", "points": 10, "quantity": 5, "col": 2, "type": "food","img":"food.png"},
+        {"id": 4, "name": "Печенье", "points": 10, "quantity": 5, "col": 2, "type": "food","img":"pizza.png"},
         {"id": 5, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food","img":"food.png"},
+        {"id": 6, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food", "img": "pizza.png"},
+        {"id": 7, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food", "img": "food.png"},
+        {"id": 8, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food", "img": "pizza.png"},
+        {"id": 9, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food", "img": "food.png"},
+        {"id": 10, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food", "img": "pizza.png"},
+        {"id": 11, "name": "Торт", "points": 12, "quantity": 10, "col": 2, "type": "food", "img": "food.png"},
     ]
 
     #Статический метод добавления еды
