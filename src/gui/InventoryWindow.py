@@ -166,6 +166,7 @@ class MainWindowInventory(QMainWindow):
 
         # Основная область с прокруткой
         scroll_area = QScrollArea()
+        scroll_area.setObjectName("inventoryScrollArea")
         scroll_area.setWidgetResizable(True)
         scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
 
@@ -399,33 +400,51 @@ class MainWindowInventory(QMainWindow):
 
     def update_inventory_display(self):
         """Обновляем отображение инвентаря"""
-        main_layout = self.centralWidget().layout()
-
-        # Находим индекс панели инвентаря
-        inventory_index = -1
-        for i in range(main_layout.count()):
-            widget = main_layout.itemAt(i).widget()
-            if widget and widget.objectName() == "inventoryPanel":
-                inventory_index = i
-                break
-
-        if inventory_index == -1:
+        # Находим область прокрутки инвентаря
+        scroll_area = self.findChild(QScrollArea, "inventoryScrollArea")
+        if not scroll_area:
             return
 
-        # Удаляем старую панель
-        old_item = main_layout.takeAt(inventory_index)
-        if old_item.widget():
-            old_item.widget().deleteLater()
+        # Получаем контент внутри ScrollArea
+        content_widget = scroll_area.widget()
+        if not content_widget:
+            return
 
-        # Создаем и вставляем новую панель
-        new_panel = self.create_inventory_panel()
-        new_panel.setObjectName("inventoryPanel")
-        main_layout.insertWidget(inventory_index, new_panel)
+        # Обновляем все карточки предметов
+        for category_widget in content_widget.findChildren(QWidget):
+            for card in category_widget.findChildren(QFrame, "itemCard"):
+                # Находим текстовый лейбл в карточке
+                text_label = card.findChild(QLabel, "itemText")
+                if text_label:
+                    # Получаем текущий текст (название предмета)
+                    current_text = text_label.text().split('\n')[0]
 
-        # Принудительное обновление интерфейса
-        self.centralWidget().updateGeometry()
-        new_panel.adjustSize()
-        QApplication.processEvents()
+                    # Ищем предмет в инвентаре
+                    item = self.find_item_by_name(current_text)
+                    if item:
+                        # Обновляем текст с новым количеством
+                        new_text = f"{item['name']}\nКол-во: {item['col']}"
+                        if 'points' in item:
+                            new_text += f"\nЭффект: {item['points']}"
+                        text_label.setText(new_text)
+
+    def find_item_by_name(self, item_name):
+        """Находит предмет в инвентаре по имени"""
+        if not hasattr(self.tamago, 'inventory'):
+            return None
+
+        # Проверяем все категории
+        categories = {
+            "food": self.tamago.inventory.items_food.getfoodlist(),
+            "pills": self.tamago.inventory.items_pills.getpillslist(),
+            "drug": self.tamago.inventory.items_drug.getdrugslist()
+        }
+
+        for category_items in categories.values():
+            for item in category_items:
+                if item['name'] == item_name:
+                    return item
+        return None
 
     def create_right_panel(self):
         panel = QFrame()

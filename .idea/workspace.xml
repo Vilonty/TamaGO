@@ -8,13 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/InventoryWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/InventoryWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainGame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/style/game_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/game_style.qss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/style/inventory_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/inventory_style.qss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/style/main_style.qss" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/style/main_style.qss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/drugs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/drugs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/food.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/inventory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/pills.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/pills.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/log/tamagochi.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/tamagochi.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

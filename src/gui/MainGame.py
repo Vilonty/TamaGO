@@ -71,6 +71,7 @@ class MainWindowGame(QMainWindow):
         center_panel = QWidget()
         center_layout = QVBoxLayout(center_panel)
         center_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        center_layout.setSpacing(5)
 
         self.name_label = QLabel(self.tamago.name)
         self.name_label.setObjectName("tamagoName")
@@ -188,11 +189,12 @@ class MainWindowGame(QMainWindow):
             container = QWidget()
             vbox = QVBoxLayout(container)
             vbox.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            vbox.setContentsMargins(0, 5, 0, 5)
+            vbox.setContentsMargins(0, 0, 0, 0)
+            vbox.setSpacing(1)
 
             # Картинка статуса
             icon = QLabel()
-            icon.setMinimumSize(70, 70)
+            icon.setMinimumSize(45, 45)
             self.load_status_icon(icon, image)
             vbox.addWidget(icon, alignment=Qt.AlignmentFlag.AlignCenter)
 
@@ -203,7 +205,7 @@ class MainWindowGame(QMainWindow):
 
             # Полоска состояния
             bar = QFrame()
-            bar.setFixedSize(300, 15)
+            bar.setMinimumSize(300, 8)
             bar.setStyleSheet(f"""
                 QFrame {{
                     background-color: {color};
